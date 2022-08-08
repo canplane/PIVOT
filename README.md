@@ -1,6 +1,8 @@
 # PIVOT
 The program I made for the almost first time
 
+**[View related post](https://canplane.com/2010-10-24-nave/)**
+
 ![Logo](https://user-images.githubusercontent.com/69769067/183469437-0b63ea3b-f153-472b-a2b1-927039b7b235.jpg)
 
 * Features
@@ -8,7 +10,7 @@ The program I made for the almost first time
     - Furnished with several widgets like portal search box, clock, notes, day counter, bookmark and calculator.
     - Initially, the program was developed to access search results faster, but as its functionality expanded, it became like the final version.
 
-* Final version : `Beta 1` (May 5, 2014)
+* Final version : `Beta 1` (May 14, 2014)
     * File path : `build/v3.0/beta1-140514/140514.exe`
 
 * Platform : Windows
