@@ -1,0 +1,5 @@
+# index.html is a Ruffle loader page, not the project's actual source — the
+# game itself is Flash/AS2, embedded in the .fla timelines and shipped as
+# compiled .swf/.exe, neither of which Linguist can read as text. Excluding
+# it leaves no detected language rather than a misleading "HTML".
+*.html linguist-detectable=false
