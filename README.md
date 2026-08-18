@@ -1,17 +1,19 @@
 # PIVOT
-The program I made for the almost first time
+One of the first programs I ever wrote.
 
 **[View related post](https://canplane.com/2010-10-24-nave/)**
 
 ![Logo](https://user-images.githubusercontent.com/69769067/183469437-0b63ea3b-f153-472b-a2b1-927039b7b235.jpg)
 
 * Features
-    - Similar to Android tablet launchers.
-    - Furnished with several widgets like portal search box, clock, notes, day counter, bookmark and calculator.
-    - Initially, the program was developed to access search results faster, but as its functionality expanded, it became like the final version.
+    - A standalone Windows app with its own launcher-style layout, similar to an Android tablet launcher.
+    - Comes with several widgets: a portal search box, a clock, notes, day counters, bookmarks, and a calculator.
+    - Started as a quicker way to reach search results, then grew into the launcher above as more widgets were added.
+
+* Playable in-browser via [Ruffle](https://ruffle.rs) — open `index.html` locally, or deploy this repo as a static site to try it live.
 
 * Final version : `Beta 1` (May 14, 2014)
-    * File path : `build/v3.0/beta1-140514/140514.exe`
+    * File path : `build/v3/beta1-20140514/20140514.exe`
 
 * Platform : Windows
 
@@ -19,7 +21,7 @@ The program I made for the almost first time
 
 * Developer : [canplane](https://canplane.com)
 
-* Duration : 2010-10-24 ~ 2014-05-14
+* Duration : 2010-10-24 – 2014-05-14
 
 * Environment : Adobe Flash
 

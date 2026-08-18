@@ -1,0 +1,6 @@
+[build]
+  # SWF_PATH is read out of index.html's own <embed src="..."> rather than
+  # duplicated here — editing index.html to point at a different build is
+  # enough on its own, nothing else needs to change in step.
+  command = "SWF_PATH=$(grep -oE '<embed src=\"[^\"]+\"' index.html | sed -E 's/<embed src=\"([^\"]+)\"/\\1/') && mkdir -p \"dist/$(dirname \"$SWF_PATH\")\" && cp index.html dist/ && cp \"$SWF_PATH\" \"dist/$SWF_PATH\""
+  publish = "dist"
