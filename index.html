@@ -21,9 +21,42 @@
   </style>
 </head>
 <body>
-  <div id="container">
-    <embed src="build/v3/beta1-20140514/20140514.swf" width="960" height="540">
-  </div>
-  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <div id="container"></div>
+  <!-- unpkg's unversioned URL resolves to npm's "latest" dist-tag, which for
+       this package is a long-stale 0.5.0 — all real development ships under
+       the "nightly" tag instead, and per-player `config` (used below) is
+       silently ignored by 0.5.0's auto <embed>-polyfill entirely, not just
+       missing a feature. -->
+  <script src="https://unpkg.com/@ruffle-rs/ruffle@nightly"></script>
+  <script>
+    const swfPath = "build/v3/beta1-20140514/20140514.swf";
+
+    // Device-font text (e.g. Korean labels the original didn't embed a font
+    // for) has nothing to fall back to in-browser: Ruffle can't read fonts
+    // off the OS the way desktop Flash Player could, so it needs a real font
+    // supplied as a SWF. fonts/pretendard.swf exports its full glyph set
+    // under the name "Pretendard", which the two lines below map onto every
+    // generic device-font category the original content might use.
+    // fontSources/defaultFonts are LoadOptions, not general player config —
+    // confirmed against Ruffle's own web/packages/core/src/public/config/
+    // load-options.ts — so they have to go into the object passed to
+    // .load(), not onto player.config (which silently does nothing here).
+    // fontSources also needs an absolute URL: a relative one silently never
+    // gets fetched at all (confirmed live — no request, no error either).
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    player.style.width = "960px";
+    player.style.height = "540px";
+    document.getElementById("container").appendChild(player);
+    player.load({
+      url: swfPath,
+      fontSources: [new URL("fonts/pretendard.swf", location.href).href],
+      defaultFonts: {
+        sans: ["Pretendard"],
+        serif: ["Pretendard"],
+        typewriter: ["Pretendard"],
+      },
+    });
+  </script>
 </body>
 </html>
